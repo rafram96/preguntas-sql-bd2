@@ -1,14 +1,6 @@
--- =====================================================================
--- CS2042 Base de Datos 2 - Lista de ejercicios SQL
--- Script de la base de datos "tienda" (ejercicios 1 al 23)
---
--- Uso:
---   psql -U postgres -c "CREATE DATABASE tienda;"
---   psql -U postgres -d tienda -f tienda.sql
---
--- El script se puede volver a ejecutar para restaurar los datos
--- originales (por ejemplo, despues de los ejercicios de UPDATE/DELETE).
--- =====================================================================
+-- BD2 - base "tienda" para los ejercicios 1 al 23
+-- psql -U postgres -d tienda -f tienda.sql
+-- Si borraste o cambiaste datos, córrelo de nuevo y queda como al inicio.
 
 DROP TABLE IF EXISTS detalle_pedido, pedido, producto, categoria,
                      cliente, empleado, sede CASCADE;
