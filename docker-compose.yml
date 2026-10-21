@@ -1,0 +1,32 @@
+# CS2042 Base de Datos 2 - Lista de ejercicios SQL (ejercicios 28 y 29)
+# Levanta un coordinador y dos nodos remotos de PostgreSQL.
+#
+#   docker compose up -d
+#   psql -h localhost -p 5433 -U postgres   # coordinador (Lima)
+#   psql -h localhost -p 5434 -U postgres   # nodo_arequipa
+#   psql -h localhost -p 5435 -U postgres   # nodo_trujillo
+#
+# Dentro de la red de Docker, el coordinador ve a los nodos por su nombre
+# de servicio (host 'nodo_arequipa' y 'nodo_trujillo', puerto 5432).
+
+services:
+  coordinador:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+
+  nodo_arequipa:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+
+  nodo_trujillo:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5435:5432"
